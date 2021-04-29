@@ -9,8 +9,8 @@ const Order = require('./models/Order');
 const OrderProduct = require('./models/OrderProduct');
 
 // Database connection
-const sequelize = new Sequelize('ecommerceapi', 'root', '06/05/06ac', {
-  host: 'localhost',
+const sequelize = new Sequelize(process.env.MYSQLDB_DATABASE, process.env.MYSQLDB_USER, process.env.MYSQLDB_PASSWORD, {
+  host: process.env.MYSQLDB_HOST,
   dialect: 'mysql',
   logging: false,
 });
